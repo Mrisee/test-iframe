@@ -20,22 +20,14 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <script>
-      window.addEventListener("message", (event) => {
-        // Проверяем тип сообщения и источник (для безопасности)
+    window.addEventListener("message", (event) => {
         if (event.data.type === "iframeResize") {
-          document.getElementById("myIframe").style.height =
-            event.data.height + "px";
+            document.getElementById("myIframe").style.height = event.data.height + "px";
         }
-      });
-    </script>
+    });
+</script>
 
-    <iframe
-      id="myIframe"
-      frameborder="0"
-      width="100%"
-      src="./test_files/0a2aedf5986090cf62735d1c27965e45e5488b2e38fd5eb03b5ab430d5fe4f72.html"
-      style="height: 952px"
-    >
-    </iframe>
+<iframe id="myIframe" frameborder="0" width="100%" src="https://sintec.zaryad.dev/partner/build/d90326b19d00fe5d1b6c4495b620710f61a32611dd8c6de79c8a3678b62c4b30">
+</iframe>
   </body>
 </html>
