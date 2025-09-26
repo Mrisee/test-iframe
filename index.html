@@ -25,6 +25,15 @@
           document.getElementById("myIframe").style.height =
             event.data.height + "px";
         }
+        if (event.data.type === "sendParentUrl") {
+          event.source.postMessage(
+            {
+              type: "parentUrl",
+              url: window.location.href,
+            },
+            "*"
+          );
+        }
       });
     </script>
 
