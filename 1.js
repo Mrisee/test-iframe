@@ -1,5 +1,6 @@
 console.log('Скрипт загрузился');
-
+const cookies = document.cookie.split(';');
+console.log(cookies);
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("myIframe");
 
