@@ -1,6 +1,5 @@
 console.log('Скрипт загрузился');
-const cookies = document.cookie.split(';');
-console.log(cookies);
+
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("myIframe");
 
@@ -12,14 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         type: "init",
         parentUrl: window.location.href,
-        referrer: document.referrer
       },
       "*"
     );
   });
-
-  // // Слушаем ответы из iframe
-  // window.addEventListener("message", (event) => {
-  //   console.log("Parent got message:", event.data);
-  // });
 });
