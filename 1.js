@@ -4,20 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("myIframe");
 
   iframe.addEventListener("load", () => {
-        iframe.contentWindow.postMessage({type: "test", parentUrl: window.location.href}, "*")
+        iframe.contentWindow.postMessage({type: "init", parentUrl: window.location.href}, "*")
 
     });
   
-  console.log(iframe);
+  // console.log(iframe);
   // Когда iframe загрузился
-  iframe.addEventListener("message", () => {
-      console.log('внутри massage');
-    iframe.contentWindow.postMessage(
-      {
-        type: "init",
-        parentUrl: window.location.href,
-      },
-      "*"
-    );
-  });
+  // iframe.addEventListener("message", () => {
+  //     console.log('внутри massage');
+  //   iframe.contentWindow.postMessage(
+  //     {
+  //       type: "init",
+  //       parentUrl: window.location.href,
+  //     },
+  //     "*"
+  //   );
+  // });
 });
