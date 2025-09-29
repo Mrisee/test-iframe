@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
           parentUrl: window.location.href, // URL партнёрской страницы
       
         "*"
-      );
+        });
   
   console.log(iframe);
   // Когда iframe загрузился
