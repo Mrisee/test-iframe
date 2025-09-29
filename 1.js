@@ -3,7 +3,7 @@ console.log('Скрипт загрузился');
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("myIframe");
 
-  console.log('внутри листенера');
+  console.log(iframe);
   // Когда iframe загрузился
   iframe.addEventListener("message", () => {
       console.log('внутри massage');
