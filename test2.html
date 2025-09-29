@@ -2,10 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Iframe test</title>
+  <title>Parent page</title>
 </head>
 <body>
-  <h1>Iframe page</h1>
-  <script src="iframe-script.js"></script>
+  <h1>Parent page</h1>
+  <iframe src="iframe.html" width="600" height="300"></iframe>
+
+  <script>
+    const iframe = document.querySelector("iframe");
+
+    // слушаем сообщения от iframe
+    window.addEventListener("message", (e) => {
+      console.log("📨 parent got:", e.data);
+    });
+
+    // шлём в iframe запрос
+    iframe.addEventListener("load", () => {
+      iframe.contentWindow.postMessage({ type: "sendParentUrl" }, "*");
+    });
+  </script>
 </body>
 </html>
