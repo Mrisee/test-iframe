@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // Слушаем ответы из iframe
-  window.addEventListener("message", (event) => {
-    console.log("Parent got message:", event.data);
-  });
+  // // Слушаем ответы из iframe
+  // window.addEventListener("message", (event) => {
+  //   console.log("Parent got message:", event.data);
+  // });
 });
