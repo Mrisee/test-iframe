@@ -6,12 +6,13 @@
 </head>
 <body>
   <h1>Parent page</h1>
-  <iframe src="https://stagepodbor.upec.pro/partner/build" width="600" height="300"></iframe>
+  
 
   <script>
     const iframe = document.querySelector("iframe");
     // Когда iframe загрузился, шлём ему данные
     iframe.addEventListener("load", () => {
+      
       iframe.contentWindow.postMessage(
         {
           type: "init",
@@ -21,11 +22,7 @@
         "*"
       );
     });
-
-    // Слушаем ответы из iframe (если нужно)
-    window.addEventListener("message", (e) => {
-      console.log("📨 Parent got message:", e.data);
-    });
   </script>
+  <iframe id="myIframe" src="https://stagepodbor.upec.pro/partner/build/d90326b19d00fe5d1b6c4495b620710f61a32611dd8c6de79c8a3678b62c4b30" width="600" height="300"></iframe>
 </body>
 </html>
