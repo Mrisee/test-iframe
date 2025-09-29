@@ -20,19 +20,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-     <script>
-       console.log('script');
-window.addEventListener('message', function (event) {
-    console.log('listener');
-    if (event.data.type === 'sendParentUrl') {
-        console.log('if');
-        event.source.postMessage({
-            type: 'parentUrl',
-            url: window.location.href
-        }, '*');
-    }
-});
-     </script>
+     <script src="./1.js"></script>
 
     <iframe
       id="myIframe"
