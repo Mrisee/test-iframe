@@ -3,13 +3,10 @@ console.log('Скрипт загрузился');
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("myIframe");
 
-    window.parent.postMessage(
-        {
-          type: "test",
-          parentUrl: window.location.href, // URL партнёрской страницы
-        },
-      "*"
-    );
+  iframe.addEventListener("load", () => {
+      iframe.contentWindow.postMessage({ type: "test", parentUrl: window.location.href, // URL партнёрской страницы }, "*");
+    });
+  );
   
   console.log(iframe);
   // Когда iframe загрузился
