@@ -20,7 +20,19 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-     <script src="https://stagepodbor.upec.pro/build/1.js"></script>
+     <script>
+       console.log('script');
+window.addEventListener('message', function (event) {
+    console.log('listener');
+    if (event.data.type === 'sendParentUrl') {
+        console.log('if');
+        event.source.postMessage({
+            type: 'parentUrl',
+            url: window.location.href
+        }, '*');
+    }
+});
+     </script>
 
     <iframe
       id="myIframe"
