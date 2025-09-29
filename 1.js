@@ -1,10 +1,12 @@
-console.log('script');
+console.log('Скрипт загрузился');
 
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("myIframe");
 
+  console.log('внутри листенера');
   // Когда iframe загрузился
   iframe.addEventListener("message", () => {
+      console.log('внутри massage');
     iframe.contentWindow.postMessage(
       {
         type: "init",
