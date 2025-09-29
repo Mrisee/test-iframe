@@ -10,15 +10,21 @@
 
   <script>
     const iframe = document.querySelector("iframe");
-
-    // слушаем сообщения от iframe
-    window.addEventListener("message", (e) => {
-      console.log("📨 parent got:", e.data);
+    // Когда iframe загрузился, шлём ему данные
+    iframe.addEventListener("load", () => {
+      iframe.contentWindow.postMessage(
+        {
+          type: "init",
+          parentUrl: window.location.href, // URL партнёрской страницы
+          referrer: document.referrer,     // можно ещё реферер
+        },
+        "*"
+      );
     });
 
-    // шлём в iframe запрос
-    iframe.addEventListener("load", () => {
-      iframe.contentWindow.postMessage({ type: "sendParentUrl" }, "*");
+    // Слушаем ответы из iframe (если нужно)
+    window.addEventListener("message", (e) => {
+      console.log("📨 Parent got message:", e.data);
     });
   </script>
 </body>
