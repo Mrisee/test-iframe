@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log('внутри massage');
     iframe.contentWindow.postMessage(
       {
-        type: "init",
+        type: "message",
         parentUrl: window.location.href,
         referrer: document.referrer
       },
