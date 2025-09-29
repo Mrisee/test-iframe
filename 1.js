@@ -10,7 +10,7 @@ console.log('script');
 //     }
 // });
 
-const iframe = document.getElementById(("iframe");
+const iframe = document.getElementById("iframe");
     // Когда iframe загрузился, шлём ему данные
     iframe.addEventListener("message", () => {
       
