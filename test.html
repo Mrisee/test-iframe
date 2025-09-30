@@ -26,17 +26,13 @@
                document.getElementById("myIframe").style.height = event.data.height + "px";
            }
        });
+       const encodedUrl = btoa(unescape(encodeURIComponent(window.location.href)));
+    const iframe = document.getElementById("myIframe");
+    iframe.src = iframe.src.replace("REPLACE_THIS", encodedUrl);
 </script>
 
 <iframe id="myIframe" frameborder="0" width="100%" src="https://stagepodbor.upec.pro/partner/build/d90326b19d00fe5d1b6c4495b620710f61a32611dd8c6de79c8a3678b62c4b30/REPLACE_THIS">
 </iframe>
 
-<script>
-    const encodedUrl = btoa(unescape(encodeURIComponent(window.location.href)));
-    const iframe = document.getElementById("myIframe");
-    iframe.src = iframe.src.replace("REPLACE_THIS", encodedUrl);
-</script>
-
-</iframe>
   </body>
 </html>
