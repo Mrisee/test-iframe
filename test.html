@@ -21,13 +21,16 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <script>
-   window.addEventListener("message", (event) => {
-           if (event.data.type === "iframeResize") {
-               document.getElementById("myIframe").style.height = event.data.height + "px";
-           }
-       });
-     
-      document.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("message", (event) => {
+        if (event.data.type === "iframeResize") {
+            const iframe = document.getElementById("myIframe");
+            if (iframe) {
+                iframe.style.height = event.data.height + "px";
+            }
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
         const encodedUrl = btoa(unescape(encodeURIComponent(window.location.href)));
         const iframe = document.getElementById("myIframe");
         if (iframe) {
@@ -36,8 +39,7 @@
     });
 </script>
 
-<iframe id="myIframe" frameborder="0" width="100%" src="https://stagepodbor.upec.pro/partner/build/d90326b19d00fe5d1b6c4495b620710f61a32611dd8c6de79c8a3678b62c4b30/REPLACE_THIS">
-</iframe>
+<iframe id="myIframe" frameborder="0" width="100%" src="https://stagepodbor.upec.pro/partner/build/d90326b19d00fe5d1b6c4495b620710f61a32611dd8c6de79c8a3678b62c4b30/REPLACE_THIS"></iframe>
 
   </body>
 </html>
